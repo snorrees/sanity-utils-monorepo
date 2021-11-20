@@ -1,0 +1,28 @@
+{
+  "name": "sanity-iframe-api-react-alpha",
+  "version": "0.0.1",
+  "description": "Helper hooks for integrating a React frontend with sanity-plugin-iframe-preview.",
+  "author": "Snorre Eskeland Brekke <snorre.e.brekke@gmail.com>",
+  "license": "MIT",
+  "repository": {},
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "tsc --build tsconfig.json",
+    "clean": "rimraf build *.tsbuildinfo",
+    "prepublishOnly": "npm run clean && npm run build"
+  },
+  "dependencies": {
+    "sanity-iframe-api-alpha": "0.0.1"
+  },
+  "devDependencies": {
+    "react": "^17.0.2",
+    "@types/react": "^17.0.2"
+  },
+  "peerDependencies": {
+    "react": ">=16.0.0"
+  }
+}

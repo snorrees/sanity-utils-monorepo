@@ -1,0 +1,47 @@
+{
+  "name": "sanity-iframe-preview",
+  "version": "0.0.1",
+  "description": "Wrapper project. Dont publish this.",
+  "author": "Snorre Eskeland Brekke <snorre.e.brekke@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "lint": "eslint . --ext .js,.ts,.tsx --max-warnings=0",
+    "bootstrap": "lerna bootstrap",
+    "build": "lerna run build --stream",
+    "clean": "lerna run clean --stream",
+    "test": "lerna run test --stream",
+    "publish": "lerna publish --conventional-commits",
+    "version:dry-run": "git fetch --tags && lerna version --no-git-tag-version --no-push",
+    "prepublishOnly": "npm run lint && npm run clean && npm run build"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^15.0.0",
+    "@commitlint/config-conventional": "^15.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.2.0",
+    "husky": "^7.0.4",
+    "lerna": "^4.0.0",
+    "lint-staged": "^12.0.3",
+    "prettier": "^2.4.1",
+    "rimraf": "^3.0.2",
+    "typescript": "~4.5.2"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged && npm run test"
+    }
+  },
+  "lint-staged": {
+    "*.css": [
+      "prettier --check"
+    ],
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --ext .js,.jsx,.ts,.tsx --max-warnings=0",
+      "prettier --check"
+    ]
+  }
+}

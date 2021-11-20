@@ -1,0 +1,17 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "include": ["./node_modules/@sanity/base/types/**/*.ts", "./src"],
+  "exclude": ["build", "node_modules"],
+  "compilerOptions": {
+    "outDir": "./lib",
+    "rootDir": "./src",
+    "baseUrl": "./",
+    "module": "esnext",
+    "target": "es6",
+    "composite": true,
+    "lib": ["es5", "es6", "dom"],
+    "jsx": "react",
+    "plugins": [{ "name": "typescript-plugin-css-modules" }],
+  },
+  "references": []
+}

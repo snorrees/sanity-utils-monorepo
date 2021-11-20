@@ -1,0 +1,17 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "./lib",
+    "rootDir": "./src",
+    "baseUrl": "./",
+    "module": "commonjs",
+    "target": "es6",
+    "composite": true,
+    "lib": ["es5", "es6", "dom"]
+  },
+  "references": [
+    { "path": "../sanity-iframe-api/tsconfig.build.json"}
+  ],
+  "include": ["src"],
+  "exclude": ["lib", "node_modules"],
+}

@@ -1,0 +1,14 @@
+.idea
+node_modules
+*.log
+*.DS_Store
+build
+.env
+*.iml
+data
+/coverage/
+/out/
+lib/
+/packages/sanity-plugin-iframe-preview/types/
+lerna-debug.log
+*.tsbuildinfo

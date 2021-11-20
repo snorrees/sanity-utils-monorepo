@@ -1,0 +1,13 @@
+/test
+/coverage
+.editorconfig
+.eslintrc
+.gitignore
+.github
+.prettierrc
+.babelrc
+.travis.yml
+.nyc_output
+tsconfig.build.types.tsbuildinfo
+tsconfig.json
+tsconfig.build.types.json
