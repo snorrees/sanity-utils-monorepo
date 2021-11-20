@@ -1,6 +1,6 @@
 {
   "name": "sanity-plugin-iframe-preview-alpha",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Component for responsive iframe preview for Sanity.",
   "author": "Snorre Eskeland Brekke <snorre.e.brekke@gmail.com>",
   "license": "MIT",
@@ -19,9 +19,9 @@
     "types"
   ],
   "dependencies": {
-    "classnames": "^2.3.1",
+    "@sanity/icons": "^1.2.1",
     "@sanity/ui": "^0.36.15",
-    "@sanity/icons": "^1.2.1"
+    "classnames": "^2.3.1"
   },
   "peerDependencies": {
     "@sanity/base": "^2.21.10",
