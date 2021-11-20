@@ -13,7 +13,7 @@ export function initPreview<T>(
     return async (event: MessageEvent) => {
       const id = event.data._id;
       const eventType = event.data._eventType;
-      console.log(event);
+
       if (!id || !eventType) {
         return;
       }
