@@ -1,6 +1,6 @@
 {
   "name": "sanity-plugin-iframe-preview-alpha",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Component for responsive iframe preview for Sanity.",
   "author": "Snorre Eskeland Brekke <snorre.e.brekke@gmail.com>",
   "license": "MIT",
