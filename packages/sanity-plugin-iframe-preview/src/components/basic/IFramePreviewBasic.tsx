@@ -32,9 +32,16 @@ export interface IFramePreviewBasicProps extends BasicPreviewProps {
      * Iframe url. By default sanity-iframe-api-react is enabled by passing
      * sanityPreview=true query-param.
      *
-     *  Example: https://some-page.example/post?sanityPreview=true
+     *  Examples:
+     *  * `'https://some-page.example/post?sanityPreview=true'`
+     *  * `` (doc) => `https://some-page.example/${doc._id}?sanityPreview=true` ``
+     *  * `` (doc) => Promise.resolve(`https://some-page.example/${doc.slug.current}/preview`) ``
      * */
-    url: string | Promise<string>;
+    url:
+      | string
+      | Promise<string>
+      | ((previewDocument: SanityDocument) => string)
+      | ((previewDocument: SanityDocument) => Promise<string>);
 
     /** Map the SanityDocument available to the previewComponent prior to sending it to the iframe.
      * After the iframe responds with a groq-event, this method will no longer be invoked.*/
@@ -94,7 +101,7 @@ const IFramePreviewInternal = forwardRef(function IFramePreview(
   forwardRef: ForwardedRef<HTMLIFrameElement>
 ) {
   const [state, dispatch] = usePreviewReducer(sanityClient);
-  const url = useUrl(props.options.url);
+  const url = useUrl(props.options.url, props.document.displayed);
 
   const ref = useRef<HTMLIFrameElement | null>(null);
   useIframeMessageListener(dispatch);
@@ -138,12 +145,24 @@ const IFramePreviewInternal = forwardRef(function IFramePreview(
   );
 });
 
-function useUrl(propsUrl: string | Promise<string>) {
+function useUrl(
+  propsUrl: IFramePreviewBasicProps["options"]["url"],
+  document?: SanityDocument
+) {
   const [url, setUrl] = useState<string | undefined>(undefined);
 
   useEffect(() => {
-    Promise.resolve(propsUrl).then(setUrl);
-  }, [propsUrl]);
+    if (!document) {
+      return;
+    }
+    const resolveUrl =
+      typeof propsUrl === "function" ? propsUrl(document) : propsUrl;
+    Promise.resolve(resolveUrl).then((newUrl) => {
+      if (newUrl !== url) {
+        setUrl(newUrl);
+      }
+    });
+  }, [url, propsUrl, document]);
 
   return url;
 }

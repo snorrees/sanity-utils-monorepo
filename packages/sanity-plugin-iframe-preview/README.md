@@ -32,21 +32,25 @@ import { IFramePreview } from 'sanity-plugin-iframe-preview-alpha'
 S.view
   .component(IFramePreview)
   .options({
-      url: () => 'iframe-url' // () => (string | Promise<string>)
+      url: (doc: SanityDocument) => 'iframe-url', // (doc) => (string | Promise<string>)
+      mapDocument: (doc: SanityDocument) => ({ _id: doc._id }),
+      desktopMinWidth: 900,
    })   
   .icon(EyeIcon)
   .id("preview")
   .title("Preview")
 ```
 
+Read [IFramePreviewBasicProps](src/components/IFramePreview.tsx) jsdocs for config details.
+
 ### Define preview component from schema
-To enable iframe preview directly schema definition, do something along the lines of the following example:
+To enable iframe preview directly in schema definition, you can do something along the lines of this:
 ```ts
 // someSchema.tsx
 export const someSchema = {
     type: 'document',
     title: 'Some doc',
-    previewComponent: IFramePreview
+    previewComponent: IFramePreview,
     fields: [/** omitted */]
 }
 
