@@ -5,6 +5,10 @@
   "author": "Snorre Eskeland Brekke <snorre.e.brekke@gmail.com>",
   "license": "MIT",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/snorrees/sanity-iframe-preview.git"
+  },
   "scripts": {
     "lint": "eslint . --ext .js,.ts,.tsx --max-warnings=0",
     "bootstrap": "lerna bootstrap",
