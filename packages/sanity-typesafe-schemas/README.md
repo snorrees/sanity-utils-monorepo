@@ -72,6 +72,7 @@ to extend the types under `sanity-typesafe-schemas-alpha/schemas`:
 
 ```ts
 // document-extension.ts
+import "sanity-typesafe-schemas-alpha";
 declare module "sanity-typesafe-schemas-alpha" {
     interface DocumentSchema {
         options?: {
@@ -95,6 +96,7 @@ to extend `SchemaDirectory` in `sanity-typesafe-schemas-alpha/schema-directory`:
 
 ```ts
 // special-string-schema.ts
+import { StringSchema } from "sanity-typesafe-schemas-alpha";
 export type SpecialStringSchema = Omit<StringSchema, "type"> & {
     type: "special-string";
     options: {
@@ -103,6 +105,7 @@ export type SpecialStringSchema = Omit<StringSchema, "type"> & {
 };
 
 // schema-directory-extension.ts
+import "sanity-typesafe-schemas-alpha";
 declare module "sanity-typesafe-schemas-alpha" {
   interface SchemaDirectory {
     "special-string": SpecialStringSchema;
