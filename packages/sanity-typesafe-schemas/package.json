@@ -1,0 +1,25 @@
+{
+  "name": "sanity-typesafe-schemas-alpha",
+  "version": "0.0.1",
+  "description": "Helper functions that bring autocomplete and feature discovery to Sanity schemas.",
+  "author": "Snorre Eskeland Brekke <snorre.e.brekke@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/snorrees/sanity-iframe-preview.git"
+  },
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "tsc --build tsconfig.build.json",
+    "clean": "rimraf build *.tsbuildinfo",
+    "prepublishOnly": "npm run clean && npm run build"
+  },
+  "devDependencies": {
+    "@sanity/types": "^2.22.0",
+    "@types/react": "^17.0.36"
+  }
+}
