@@ -1,21 +1,19 @@
-# Sanity Iframe Preview: ALPHA
+# Sanity Utils Monorepo
 
-THIS IS A PROOF OF CONCEPT, CONSIDER IT AS WORK IN PROGRESS.
+Monorepo with an assortment of utilities for Sanity. 
 
-Monorepo with packages that should be used in unison:
-* [sanity-plugin-iframe-preview](sanity-plugin-iframe-preview) - iframe preview-pane for Sanity Studio.  
-* [sanity-iframe-api](sanity-iframe-api) - util function for the render-app that will be embedded in the preview iframe.
-* [sanity-iframe-api-react](sanity-iframe-api-react) - React-friendly hook using the above api
+## Package overview
 
-## At-a-glance 
+### Sanity IFrame Preview
+Framework agnostic in-studio live updated previews for Sanity Studio.
+* [sanity-plugin-iframe-preview](packages/sanity-plugin-iframe-preview)
+* [sanity-iframe-api](packages/sanity-iframe-api)
+* [sanity-iframe-api-react](packages/sanity-iframe-api-react)
 
-* Use IFramePreview component in studio structure view.
-  * Configure with render-app preview-url 
-* Use iframe-api in the render-app.
-  * Configure with groq-query
-* Enjoy live-updated preview in Studio, with queries executed by the Studio on behalf of the render app.
 
-![sequence.png](docs/images/sequence.png)
+### Sanity Typesafe Schemas
+Helper functions that bring autocomplete and feature discovery to Sanity schemas.
+* [sanity-typesafe-schemas](packages/sanity-typesafe-schemas)
 
 ## Develop
 
