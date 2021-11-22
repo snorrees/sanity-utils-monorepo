@@ -15,7 +15,7 @@
     "build": "lerna run build --stream",
     "clean": "lerna run clean --stream",
     "test": "lerna run test --stream",
-    "publish": "lerna publish --conventional-commits",
+    "publish": "git fetch --tags && lerna publish --conventional-commits",
     "version:dry-run": "git fetch --tags && lerna version --no-git-tag-version --no-push",
     "prepublishOnly": "npm run lint && npm run clean && npm run build"
   },
