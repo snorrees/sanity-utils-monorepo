@@ -15,9 +15,9 @@
     "build": "lerna run build --stream",
     "clean": "lerna run clean --stream",
     "test": "lerna run test --stream",
-    "publish": "git fetch --tags && lerna publish --conventional-commits",
+    "publish": "npm run lint && git fetch --tags && lerna publish --conventional-commits",
     "version:dry-run": "git fetch --tags && lerna version --no-git-tag-version --no-push",
-    "prepublishOnly": "npm run lint && npm run clean && npm run build"
+    "prepublishOnly": "npm run clean && npm run build"
   },
   "devDependencies": {
     "@commitlint/cli": "^15.0.0",
