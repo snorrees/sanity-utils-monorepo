@@ -1,5 +1,5 @@
 {
-  "name": "sanity-iframe-preview",
+  "name": "@snorreeb/sanity-utils-monorepo",
   "version": "0.0.1",
   "description": "Wrapper project. Dont publish this.",
   "author": "Snorre Eskeland Brekke <snorre.e.brekke@gmail.com>",

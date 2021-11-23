@@ -1,6 +1,6 @@
 {
-  "name": "sanity-iframe-api-alpha",
-  "version": "0.0.5",
+  "name": "@snorreeb/sanity-iframe-api",
+  "version": "0.0.1",
   "description": "Helper functions for integrating with sanity-plugin-iframe-preview.",
   "author": "Snorre Eskeland Brekke <snorre.e.brekke@gmail.com>",
   "license": "MIT",
