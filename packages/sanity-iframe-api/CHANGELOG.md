@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.2.0 (2021-11-23)
+
+
+### Bug Fixes
+
+* make packages public ([c3b50a9](https://github.com/snorrees/sanity-iframe-preview/commit/c3b50a90c7bb0a343a76218f23b51eb242ac809e))
+* removed debuglog ([2b5cde5](https://github.com/snorrees/sanity-iframe-preview/commit/2b5cde5c9975aabde724999c52652d76844e8328))
+
+
+### Features
+
+* renamed packages and resetting versions ([08068b3](https://github.com/snorrees/sanity-iframe-preview/commit/08068b334310830e19668bc389f29e86b5c49065))
+
+
+
+
+
 # 0.1.0 (2021-11-23)
 
 
