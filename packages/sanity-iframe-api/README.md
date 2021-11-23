@@ -1,20 +1,20 @@
 # sanity-iframe-api
 
-THIS IS A PROOF OF CONCEPT, CONSIDER IT AS WORK IN PROGRESS.
+WORK IN PROGRESS.
 
 Framework agnostic functions for interacting with
 the IFramePreview provided by
-`sanity-plugin-iframe-preview-alpha`.
+`@snorreeb/sanity-plugin-iframe-preview`.
 
 
 # Installation
 
-`npm i sanity-iframe-api-alpha`
+`npm i @snorreeb/sanity-iframe-api`
 
 # Usage
 
 ```ts
-import { initPreview } from 'sanity-iframe-api-alpha'
+import { initPreview } from '@snorreeb/sanity-iframe-api'
 
 // Somewhere after page load
 initPreview(

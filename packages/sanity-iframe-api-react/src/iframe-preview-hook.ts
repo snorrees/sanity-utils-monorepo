@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import type { PreviewConfig } from "sanity-iframe-api-alpha";
+import type { PreviewConfig } from "@snorreeb/sanity-iframe-api";
 
 function isPreviewEnabled() {
   if (typeof window !== "undefined") {
@@ -23,7 +23,7 @@ export function usePreviewData<T>(config: PreviewHookConfig<T>) {
     if (!isPreviewEnabled()) {
       return;
     }
-    import("sanity-iframe-api-alpha").then((module) => {
+    import("@snorreeb/sanity-iframe-api").then((module) => {
       module.initPreview(config, setData);
     });
   }, [

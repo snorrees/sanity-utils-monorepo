@@ -34,12 +34,12 @@ Utility functions to ease Sanity schema development:
 
 # Installation
 
-`npm i sanity-typesafe-schemas-alpha`
+`npm i @snorreeb/sanity-typesafe-schemas`
 
 # Usage
 
 ```ts
-import { field, schema } from "sanity-typesafe-schemas-alpha";
+import { field, schema } from "@snorreeb/sanity-typesafe-schemas";
 
 export const typesafeDocumentSchema = schema("document", {
     name: "some-doc",
@@ -68,12 +68,12 @@ See [code examples](src/examples).
 
 ## Extending Sanity schemas
 Use [TypeScript declaration merging](https://www.typescriptlang.org/docs/handbook/declaration-merging.html) 
-to extend the types under `sanity-typesafe-schemas-alpha/schemas`:
+to extend the types under `@snorreeb/sanity-typesafe-schemas`:
 
 ```ts
 // document-extension.ts
-import "sanity-typesafe-schemas-alpha";
-declare module "sanity-typesafe-schemas-alpha" {
+import "@snorreeb/sanity-typesafe-schemas";
+declare module "@snorreeb/sanity-typesafe-schemas" {
     interface DocumentSchema {
         options?: {
             custom?: boolean;
@@ -92,11 +92,11 @@ export const typesafeDocumentSchema = schema("document", {
 
 ## Adding reusable schema types
 Define your schema type, and use [TypeScript declaration merging](https://www.typescriptlang.org/docs/handbook/declaration-merging.html)
-to extend `SchemaDirectory` in `sanity-typesafe-schemas-alpha/schema-directory`:
+to extend `SchemaDirectory` in `@snorreeb/sanity-typesafe-schemas`:
 
 ```ts
 // special-string-schema.ts
-import { StringSchema } from "sanity-typesafe-schemas-alpha";
+import { StringSchema } from "@snorreeb/sanity-typesafe-schemas";
 export type SpecialStringSchema = Omit<StringSchema, "type"> & {
     type: "special-string";
     options: {
@@ -105,7 +105,7 @@ export type SpecialStringSchema = Omit<StringSchema, "type"> & {
 };
 
 // schema-directory-extension.ts
-import "sanity-typesafe-schemas-alpha";
+import "@snorreeb/sanity-typesafe-schemas";
 declare module "sanity-typesafe-schemas-alpha" {
   interface SchemaDirectory {
     "special-string": SpecialStringSchema;
@@ -126,7 +126,7 @@ The `'custom'` string  is a general escape hatch that still provides some safety
 Use alongside the `typed` generic helper function, to define inline types.
 
 ```ts
-import { schema, typed } from "sanity-typesafe-schemas-alpha";
+import { schema, typed } from "@snorreeb/sanity-typesafe-schemas";
 
 export const stringSchemaUsedByNameSomewhereElse = schema("custom", {
     type: "string", // when using 'custom', type must be provided here

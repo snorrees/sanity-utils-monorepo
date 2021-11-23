@@ -27,12 +27,12 @@ revision matches the studio revision.
 ## Install
 Install as a dependency in your Sanity Studio:
 
-`npm install sanity-plugin-iframe-preview-alpha`
+`npm install @snorreeb/sanity-plugin-iframe-preview`
 
 ## Usage
 Use in your structure code:
 ```ts
-import { IFramePreview } from 'sanity-plugin-iframe-preview-alpha'
+import { IFramePreview } from '@snorreeb/sanity-plugin-iframe-preview'
 
 S.view
   .component(IFramePreview)

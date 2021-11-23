@@ -1,17 +1,17 @@
 # sanity-iframe-api-react
 
-THIS IS A PROOF OF CONCEPT, CONSIDER IT AS WORK IN PROGRESS.
+WORK IN PROGRESS.
 
 ## Installation
 
-`npm i sanity-iframe-api-react-alpha`
+`npm i @snorreeb/sanity-iframe-api-react`
 
 ## Usage
 
 In your React-component:
 
 ```tsx
-import { usePreviewData } from 'sanity-iframe-api-react-alpha'
+import { usePreviewData } from '@snorreeb/sanity-iframe-api-react'
 
 function MyPage({ prefetchedData }) {
     const data = usePreviewData({
