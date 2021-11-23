@@ -1,6 +1,9 @@
 {
   "name": "@snorreeb/sanity-iframe-api-react",
   "version": "0.1.0",
+  "publishConfig": {
+    "access": "public"
+  },
   "description": "Helper hooks for integrating a React frontend with sanity-plugin-iframe-preview.",
   "author": "Snorre Eskeland Brekke <snorre.e.brekke@gmail.com>",
   "license": "MIT",
