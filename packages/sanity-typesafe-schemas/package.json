@@ -1,6 +1,6 @@
 {
   "name": "@snorreeb/sanity-typesafe-schemas",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Helper functions that bring autocomplete and feature discovery to Sanity schemas.",
   "author": "Snorre Eskeland Brekke <snorre.e.brekke@gmail.com>",
   "license": "MIT",
