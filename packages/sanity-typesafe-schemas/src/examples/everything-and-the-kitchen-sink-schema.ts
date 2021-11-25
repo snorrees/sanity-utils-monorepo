@@ -23,6 +23,7 @@ export const megaSchema = schema("document", {
     field("boolean", {
       name: "booleanField",
       title: "Checkbox",
+      validation: (rule) => rule.required(),
       options: {
         layout: "checkbox",
       },

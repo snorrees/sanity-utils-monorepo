@@ -2,7 +2,6 @@ import { SanitySchemaBase } from "./util-types/common";
 import { Rule, Validation } from "./util-types/validation";
 import { InitialValueProperty } from "@sanity/types/src/schema/types";
 import { AssetSource } from "@sanity/types/src/assets/index";
-import { GenericField } from "../schema-directory";
 
 /** [Image docs](https://www.sanity.io/docs/image-type) */
 export interface ImageSchema extends SanitySchemaBase {
@@ -23,7 +22,7 @@ export interface ImageSchema extends SanitySchemaBase {
    *
    * [Image fields docs](https://www.sanity.io/docs/image-type#fields-ab54e73207e5)
    */
-  fields?: GenericField[];
+  fields?: unknown[];
 
   /** [Validation docs](https://www.sanity.io/docs/validation) */
   validation?: (rule: ImageRule) => Validation<ImageRule>;

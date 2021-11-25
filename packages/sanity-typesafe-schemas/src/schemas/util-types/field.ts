@@ -1,6 +1,6 @@
 import { HideFunction } from "./common";
 
-export interface IFieldBase {
+export interface FieldBase {
   fieldset?: string;
 
   /** https://www.sanity.io/docs/schema-types#hidden-57ac9e4a350a and https://www.sanity.io/docs/conditional-fields*/

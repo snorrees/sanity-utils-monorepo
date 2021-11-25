@@ -1,7 +1,6 @@
 import { SanitySchemaBase } from "./util-types/common";
 import { Rule, Validation } from "./util-types/validation";
 import { InitialValueProperty } from "@sanity/types";
-import { GenericField } from "../schema-directory";
 import { AssetSource } from "@sanity/types/src/assets/index";
 
 /**
@@ -22,7 +21,7 @@ export interface FileSchema extends SanitySchemaBase {
    *
    * [File fields docs](https://www.sanity.io/docs/file-type#fields-93a1b58234d2)
    */
-  fields?: GenericField[];
+  fields?: unknown[];
 
   /** [Initial value docs](https://www.sanity.io/docs/initial-value-templates) */
   initialValue?: InitialValueProperty<Record<string, unknown>>;

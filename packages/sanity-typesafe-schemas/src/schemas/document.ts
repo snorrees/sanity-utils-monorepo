@@ -2,7 +2,6 @@ import { Preview, SanitySchemaBase } from "./util-types/common";
 import { Rule, Validation } from "./util-types/validation";
 import { InitialValueProperty } from "@sanity/types";
 import { Fieldset } from "./util-types/fieldset";
-import { GenericField } from "../schema-directory";
 
 interface Ordering {
   title: string;
@@ -33,7 +32,7 @@ export interface DocumentSchema extends SanitySchemaBase {
   /** [Docs](https://www.sanity.io/docs/document-type#liveEdit-6752c1c910a8) */
   liveEdit?: boolean;
 
-  fields: GenericField[];
+  fields: unknown[];
 }
 
 /**

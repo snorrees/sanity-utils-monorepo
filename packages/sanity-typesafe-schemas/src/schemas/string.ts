@@ -3,16 +3,11 @@ import { Rule, Validation } from "./util-types/validation";
 import { InitialValueProperty } from "@sanity/types/src/schema/types";
 
 /**
- * [Text docs](https://www.sanity.io/docs/text-type)
+ * [String docs]{@link https://www.sanity.io/docs/text-type}
  */
 export interface StringSchema extends SanitySchemaBase {
-  type: "text";
-  options?: TextOptions;
-
-  /**
-   * Controls the number of rows/lines in the rendered textarea. Default number of rows: 10.
-   */
-  rows?: number;
+  type: "string";
+  options?: StringOptions;
 
   /** [Validation docs](https://www.sanity.io/docs/validation) */
   validation?: (rule: StringRule) => Validation<StringRule>;
@@ -21,7 +16,7 @@ export interface StringSchema extends SanitySchemaBase {
   initialValue?: InitialValueProperty<string>;
 }
 
-export type TextOptions = EnumListProps<string>;
+export type StringOptions = EnumListProps<string>;
 
 /** [Text validation docs]{@link https://www.sanity.io/docs/text-type#required()-35a8cd8fa2cd} */
 export interface StringRule extends Rule<StringRule> {

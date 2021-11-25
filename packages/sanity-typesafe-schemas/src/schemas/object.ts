@@ -3,7 +3,6 @@ import { Rule, Validation } from "./util-types/validation";
 import { Fieldset } from "./util-types/fieldset";
 import { ReactNode } from "react";
 import { InitialValueProperty } from "@sanity/types/src/schema/types";
-import { GenericField } from "../schema-directory";
 
 /**
  * [Object docs](https://www.sanity.io/docs/object-type).
@@ -29,7 +28,7 @@ export interface ObjectSchema extends SanitySchemaBase {
     icon?: (props: unknown) => ReactNode;
   };
 
-  fields: GenericField[];
+  fields: unknown[];
 }
 
 /** [Object validation](https://www.sanity.io/docs/object-type#required()-418dc1fef733) */

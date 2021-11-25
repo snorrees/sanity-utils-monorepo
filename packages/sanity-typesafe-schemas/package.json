@@ -18,6 +18,7 @@
   ],
   "scripts": {
     "build": "tsc --build tsconfig.build.json",
+    "build:examples": "tsc --build tsconfig.json",
     "clean": "rimraf build *.tsbuildinfo",
     "prepublishOnly": "npm run clean && npm run build"
   },

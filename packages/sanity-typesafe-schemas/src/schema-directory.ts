@@ -1,7 +1,7 @@
 import { DocumentSchema } from "./schemas/document";
 import { StringSchema } from "./schemas/string";
 import { Preview, SanitySchemaBase } from "./schemas/util-types/common";
-import { IFieldBase } from "./schemas/util-types/field";
+import { FieldBase } from "./schemas/util-types/field";
 import { ArraySchema } from "./schemas/array";
 import { BlockSchema } from "./schemas/block";
 import { BooleanSchema } from "./schemas/boolean";
@@ -71,5 +71,4 @@ export type MaybeCustomField<FieldTypeName extends MaybeCustomType> =
     ? SchemaDirectory[FieldTypeName]
     : CustomSchema<FieldTypeName>;
 
-export type GenericField = CustomSchema<string> & IFieldBase;
-export type UnknownRecord = Record<string, unknown>;
+export type GenericField = CustomSchema<string> & FieldBase;

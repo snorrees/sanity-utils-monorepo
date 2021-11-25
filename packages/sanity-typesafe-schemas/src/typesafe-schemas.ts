@@ -1,12 +1,10 @@
 import { Preview } from "./schemas/util-types/common";
-import { IFieldBase } from "./schemas/util-types/field";
+import { FieldBase } from "./schemas/util-types/field";
 import {
   CustomTypeField,
-  GenericField,
   MaybeCustomField,
   MaybeCustomSchema,
   MaybeCustomType,
-  UnknownRecord,
 } from "./schema-directory";
 
 /**
@@ -19,20 +17,14 @@ import {
 export function schema<
   SchemaName extends string,
   SchemaType extends MaybeCustomType,
-  Schema extends MaybeCustomSchema<SchemaType>,
-  SchemaField extends GenericField
+  Schema extends MaybeCustomSchema<SchemaType>
 >(
   type: SchemaType,
   schema: Omit<Schema, "type"> & {
     name: SchemaName;
     /** Omitting title results in console warnings during schema validation, so make it required. */
     title: string;
-    fields?: SchemaField[];
     preview?: Preview;
-    initialValue?:
-      | UnknownRecord
-      | (() => UnknownRecord)
-      | (() => Promise<UnknownRecord>);
   } & (SchemaType extends CustomTypeField<SchemaType>
       ? { type: string }
       : { type?: SchemaType })
@@ -51,14 +43,12 @@ export function schema<
  * @param schema Schema definition. Type field is optional, unless 'custom' type is used.
  */
 export function field<
-  FieldName extends string,
   FieldType extends MaybeCustomType,
   FieldSchema extends MaybeCustomField<FieldType>
 >(
   type: FieldType,
   schema: Omit<FieldSchema, "type"> &
-    IFieldBase & {
-      name: FieldName;
+    FieldBase & {
       title: string;
     } & (FieldType extends CustomTypeField<FieldType>
       ? { type: string }
@@ -89,6 +79,13 @@ export function arrayOf<
     type,
     ...schema,
   };
+}
+
+/**
+ * @see checkSchema for intended usage
+ */
+export function forType<SchemaInterface>() {
+  return {} as SchemaInterface;
 }
 
 /**

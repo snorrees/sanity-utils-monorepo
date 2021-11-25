@@ -21,3 +21,22 @@ export const testDocumentSchema = schema("document", {
     custom: true,
   },
 });
+
+export const typesafeDocumentSchema = schema("document", {
+  name: "some-doc",
+  title: "Some document",
+  fields: [
+    field("string", {
+      name: "someField",
+      title: "Some title",
+      initialValue: "a",
+      options: {
+        list: [
+          { value: "a", title: "A" },
+          { value: "b", title: "B" },
+        ],
+        layout: "radio",
+      },
+    }),
+  ],
+});
